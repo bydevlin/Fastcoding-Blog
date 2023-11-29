@@ -1,0 +1,43 @@
+@import "variable";
+@import "mixin";
+
+.picture{
+    background-color: $color-f5;
+    .picture__bg{
+        display: flex;
+        align-items: center;
+        @media (max-width:768px) {
+            flex-direction: column;
+        }
+
+        .picture__left{
+            width: 50%;
+            padding-right: 50px;
+            @media (max-width:768px) {
+                width: 100%;
+                padding: 10px 0px;
+            }
+            .picture__line{
+                width: 50px;
+                height: 2px;
+                border: 1px solid $text-color-ori;
+            }
+            h3{
+                padding-bottom: 20px;
+            }
+            p{
+                color: $color-gray;
+                padding-top: 20px;
+            }
+
+        }
+        .picture__right{
+            width: 50%;
+            padding-left: 50px;
+            @media (max-width:768px) {
+                width: 100%;
+                padding: 10px 0px;
+            }
+        }
+    }
+}

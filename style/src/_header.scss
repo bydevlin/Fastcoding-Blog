@@ -1,0 +1,99 @@
+@import "variable";
+@import "mixin";
+
+header {
+    background-color: $main-color;
+    // position: fixed;
+    width: 100%;
+    z-index: 999;
+
+    .navbar {
+        display: flex;
+
+        @media (max-width:768px) {
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        position: relative;
+
+        .logo {
+            text-decoration: none;
+            color: $text-color-white;
+            font-size: 1.5rem;
+            padding: 20px 0px;
+
+            b {
+                color: $text-color-ori;
+                font-weight: bold;
+            }
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                display: inline-block;
+
+                @media (max-width:768px) {
+                    display: block;
+                }
+
+                .menu__active {
+                    color: $text-color-ori;
+                }
+
+                a {
+                    text-decoration: none;
+                    padding: 30px 20px;
+                    display: block;
+                    color: $text-color-white;
+                    font-size: 1rem;
+
+                    @media (max-width:768px) {
+                        padding: 10px 0px;
+                    }
+
+                    &:hover {
+                        color: $text-color-ori;
+                    }
+                }
+            }
+
+            @media (max-width:768px) {
+                display: none;
+
+
+            }
+
+        }
+
+        .show-menu {
+            display: block !important;
+        }
+
+        .btn-secondary {
+            position: absolute;
+            right: 0;
+            @include button($text-color-ori, #ffffff);
+            display: none;
+
+            @media (max-width:768px) {
+                display: block;
+                top: 15px;
+            }
+        }
+
+    }
+}
+.fixed-menu{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}

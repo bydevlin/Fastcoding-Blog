@@ -1,0 +1,86 @@
+@import "variable";
+@import "mixin";
+
+
+
+.sublist {
+    .sublist__bg {
+        display: flex;
+        align-items: center;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+
+        .sublist__left {
+            width: 50%;
+            padding-right: 50px;
+
+            @media (max-width:768px) {
+                padding: 10px 0px;
+                width: 100%;
+            }
+
+            .sublist__image {
+                img {
+                    object-fit: contain !important;
+
+                }
+            }
+        }
+
+        .sublist__right {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            padding-left: 50px;
+
+            @media (max-width:768px) {
+                padding: 10px 0px;
+                width: 100%;
+            }
+
+            h3 {
+                padding-bottom: 20px;
+            }
+
+            .sublist__line {
+                width: 50px;
+                height: 2px;
+                border: 1px solid $text-color-ori;
+            }
+
+            p {
+                font-size: 1rem;
+                color: $color-gray;
+                padding: 20px 0px;
+            }
+
+            .sublist__group {
+                .sublist__item {
+                    display: flex;
+                    padding: 5px 0px;
+
+                    .sublist__item__icon {
+                        padding-right: 30px;
+
+                        .btn-icon {
+                            @include icon($text-color-ori, $text-color-ori);
+
+                        }
+                    }
+
+                    .sublist__item__des {
+                        display: flex;
+                        flex-direction: column;
+
+                        p {
+                            padding: 5px 0px;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

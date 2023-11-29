@@ -1,0 +1,57 @@
+@import "variable";
+@import "mixin";
+
+.stylish {
+    // background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/stylishs.jpg");
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    height: 300px;
+    position: relative;
+
+    .stylish__bg {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        h1 {
+            color: $text-color-white;
+            font-size: 2.5rem;
+
+            @media (max-width:768px) {
+                font-size: 2rem;
+            }
+
+            font-weight: lighter;
+            text-transform: uppercase;
+            padding-bottom: 20px;
+        }
+
+        .stylish__line {
+            width: 50px;
+            height: 2px;
+            border: 1px solid $text-color-white;
+        }
+
+        p {
+            padding: 20px 0px;
+            color: $color-gray;
+            font-size: 1rem;
+        }
+
+        button {
+            @include button($text-color-ori, $text-color-white);
+            border: 2px solid $text-color-white;
+            border-radius: 0;
+            background-color: transparent;
+
+        }
+    }
+}

@@ -1,0 +1,60 @@
+@import "variable";
+@import "mixin";
+
+.awesome{
+    .awesome__bg{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .awesome__title{
+            font-size: 2rem;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: lighter;
+            padding-bottom: 20px;
+        }
+        .awesome__line{
+            width: 70px;
+            height: 2px;
+            border: 1px solid $text-color-ori;
+            text-align: center;
+        }
+        p{
+            font-size: 1rem;
+            color: $color-gray;
+            padding: 20px 0px;
+        }
+        .awesome__list{
+            display: flex;
+            align-items: center;
+            @media (max-width:768px) {
+                flex-direction: column;
+            }
+            .awesome__item{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+           
+                button{
+                    @include icon($text-color-ori, $text-color-ori);
+                    width: 70px;
+                    height: 70px;
+                    @media (max-width:768px) {
+                        height: 50px;
+                        width: 50px;
+                    }
+                    font-size: 1.5rem;
+                }
+                h3{
+                    padding: 10px 0px;
+                }
+                p{
+                    font-size: 1rem;
+                    color: $color-gray;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

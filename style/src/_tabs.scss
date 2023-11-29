@@ -1,0 +1,91 @@
+@import "variable";
+@import "mixin";
+
+.tabs {
+    background-color: $color-f5;
+    .tabs__bg {
+        display: flex;
+
+        @media (max-width:1050px) {
+            flex-direction: column;
+        }
+
+        .tabs__btn {
+            display: flex;
+            flex-direction: column;
+            padding: 20px 0px;
+
+            @media (max-width:1050px) {
+                flex-direction: row;
+                justify-content: center;
+
+                .btn-square-01 {
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                }
+
+                .btn-square-03 {
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                }
+            }
+
+            .btn-square {
+                @include button-square($color-dark-gray, $text-color-ori, $text-color-white);
+            }
+
+            .btn-square-active {
+                background-color: $text-color-ori;
+            }
+
+            @media (min-width:768px) {
+                .btn-square-01 {
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                }
+
+                .btn-square-03 {
+                    border-bottom-left-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                }
+            }
+
+        }
+    }
+
+    .tabs__center {
+        padding: 20px 50px;
+        @media (max-width:768px){
+            padding: 10px 10px;
+        }
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        h3 {
+            padding-bottom: 20px;
+        }
+
+        p {
+            padding: 20px 0px;
+            color: $color-gray;
+        }
+
+        button {
+            @include button($text-color-ori, $text-color-white);
+            margin-top: 30px;
+        }
+    }
+
+    .tabs__image {
+        width: 400px;
+        @media (max-width:768px) {
+            width: 300px;
+        }
+        min-width: 300px;
+
+        img {
+            object-fit: contain !important;
+        }
+    }
+}
